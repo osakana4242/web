@@ -1,0 +1,121 @@
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=SHIFT_JIS">
+		<meta name="author" content="おさかな">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<title>おさかなの不安定世界…せっちゃんのおみせ</title>
+		<link rel="StyleSheet" href="shop.css" type="text/css">
+		<script type="text/javascript" language="JavaScript"><!-- //
+function changeVision(comeValue, max) {
+	var value = "block";
+	var id  = "drawer" + comeValue;
+	if (document.all) {
+		if(document.all(id).style.display == value) {
+			value = "none";
+		}
+		for(var n = 0; n < max; n++) {
+			document.all("drawer" + n).style.display = "none";
+		}
+		document.all(id).style.display = value; 
+		location.hash = "goto" + comeValue;
+	}
+	else if (document.getElementById) {
+		if(document.getElementById(id).style.display == value) {
+			value = "none";
+		}
+		for(var n = 0; n < max; n++) {
+			document.getElementById("drawer" + n).style.display = "none";
+		}
+		document.getElementById(id).style.display = value; 
+		location.hash = "goto" + comeValue;
+	}
+}
+	
+function imageWindow(href, key) {
+	var bgmWindow = window.open(href + '?' + key, 'bgm', "toolbar=no,location=no,directories=no,status=no,"
+	+ "left=0,top=0");
+}
+
+function over(id) {
+	if (document.all) document.all(id + "_drawer").style.display = "block";
+	else if (document.getElementById) document.getElementById(id + "_drawer").style.display = "block";
+}
+
+function out(id) {
+	if (document.all) document.all(id + "_drawer").style.display = "none";
+	else if (document.getElementById) document.getElementById(id + "_drawer").style.display = "none";
+}
+
+// -->
+		</script>
+	</head>
+	<body>
+		<div id="secchan" style="float: right;"><img src="secchan.png" width="256" height="256"></div>
+		<div id="main-out"><div id="main">
+			<h1><img src="title.gif"></h1>
+			<p>冥土のみやげにどうぞ。</p>
+			<ul>
+				<li><a class="light" onmouseover="over('boards')" onmouseout="out('boards')"
+					href="boards/index.html">過去のトップ絵</a></li>
+				<li><a class="light" onmouseover="over('exchange')" onmouseout="out('exchange')"
+					href="exchange/index.html">『交換まんが』</a></li>
+				<li><a class="light" onmouseover="over('nusumi')" onmouseout="out('nusumi')"
+					href="nusumi.exe">盗み食い</a></li>
+				<li><a class="light" onmouseover="over('inva')" onmouseout="out('inva')"
+					href="inva.exe">身近なインベーダー　あとのまつり版</a></li>
+				<li><a class="light" onmouseover="over('osand')" onmouseout="out('osand')"
+					href="osakana_sound.wma">おさかなサウンド</a></li>
+				<li><a class="light" onmouseover="over('tomisaku')" onmouseout="out('tomisaku')"
+					href="tomisaku.html" target="_top">トミータくんの作文</a></li>
+				<li><a class="light" target="_blank" onmouseover="over('durar07a')" onmouseout="out('durar07a')"
+					href="durar07a.gif">『サイバー戦士　ヅラエモン　リターンズ』第７巻前半</a></li>
+				<li><a class="light" target="_blank" onmouseover="over('durar09b')" onmouseout="out('durar09b')"
+					href="durar09b.gif">『サイバー戦士　ヅラエモン　リターンズ』第９巻後半</a></li>
+				<li><a class="light" target="_blank" onmouseover="over('dura')" onmouseout="out('dura')"
+					href="image.html?duraemon/imagebox">『究極斉藤久伝説　サイバー戦士　ヅラエモン』</a></li>
+				<li>
+					<a class="light" onmouseover="over('iconSet')" onmouseout="out('iconSet')"
+						href="osakana_icon.lzh">なごむ！アイコンセット</a>
+					<table class="simple">
+						<tr style="text-align : center;">
+							<td><img src="i0.gif"></td>
+							<td><img src="i1.gif"></td>
+							<td><img src="i2.gif"></td>
+							<td><img src="i3.gif"></td>
+						</tr>
+						<tr style="text-align : center;">
+							<td><div class="sFont">マイコンピュータ</div></td>
+							<td><div class="sFont">マイドキュメント</div></td>
+							<td><div class="sFont">ゴミ箱（からっぽ）</div></td>
+							<td><div class="sFont">ゴミ箱（いっぱい）</div></td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+			<a href="../index.html"><img src="../goback.gif" alt="もどる"></a>
+		</div></div>
+		<div id="boards_drawer" class="fukidasi">せっちゃん：<br>『過去の黒板風トップ絵たちです。黒板の数はそのまま更新した数です。黒板スタイルは2003年から始めたのですが、当初は更新するたびに前のトップ絵を上書きしていたので、その頃のものはほとんど残っていません。ざんねん。』</div>
+		<div id="exchange_drawer" class="fukidasi">せっちゃん：<br>『おさかなさんが高校のとき、春日総一さん、まるさんと描いていた謎の交換漫画です。まるさんが家から誰が描いたかわからない少女漫画を持ち出してきたのがきっかけのようです。後におけらさんが春日さんと短大で出会い、描き手に加わりました。』</div>
+		<div id="nusumi_drawer" class="fukidasi">せっちゃん：<br>『猫が魚を盗み食いするゲームです。ゲームだろうか。』</div>
+		<div id="inva_drawer" class="fukidasi">せっちゃん：<br>『大学の課題で、作ったゲームです。先生にシュールな作品だと言われました。１、２回やれば気が済むと思います。』</div>
+		<div id="osand_drawer" class="fukidasi">せっちゃん：<br>『ＰＣを持ってから作った曲、第１号です。楽しんでますね。意味は…まったく無いです。とにかくＰＣで自分たちの声が録音出来て、自由に再生出来るというのがたまらなく面白かったんでしょうね。使用ソフトはＢＭＳクリエイター。あと、ちょっとだけＰＳのデザエモン＋。』</div>
+		<div id="tomisaku_drawer" class="fukidasi">せっちゃん：<br>『おさかなさんの後輩、トミータくんの作文です。おさかなさんが彼には負けたと言ってましたよ。』</div>
+		<div id="durar07a_drawer" class="fukidasi">せっちゃん：<br>『中学２年生の頃に書いていた漫画です。この部分には主人公であるヅラエモンこと斉藤久は出ていませんね。』</div>
+		<div id="durar09b_drawer" class="fukidasi">せっちゃん：<br>『中学２年生の頃に書いていた漫画です。漫☆画太郎せんせいの作風に相当影響を受けた時期で、絵にやたらと質感を出していますね。この頃からやっと絵に陰影をつける様になったんです。主人公であるヅラエモンこと斉藤久は１コマしか顔出てません。』</div>
+		<div id="dura_drawer" class="fukidasi">せっちゃん：<br>『中学３年生のときにリメイクしたヅラエモンです。漫☆画太郎せんせいの作風からちょっと離れたみたいです。』</div>
+		<div id="iconSet_drawer" class="fukidasi">せっちゃん：<br>『アイコンセットです。４つまとめて圧縮してあります。』</div>
+		<!-- google analytics open -->
+			<script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+			<script type="text/javascript">
+				try {
+				var pageTracker = _gat._getTracker("UA-11051536-4");
+				pageTracker._trackPageview();
+				} catch(err) {}
+			</script>
+		<!-- google analytics close -->
+	</body>
+</html>

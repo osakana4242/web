@@ -1,0 +1,14 @@
+AddType image/png .png
+AddType audio/x-smd .smd
+AddType application/x-smaf .mmf
+AddType application/x-pmd .pmd
+AddType audio/vnd.qcelp .qcp
+
+<Limit GET>
+order allow,deny
+allow from all
+</Limit>
+
+<Files .htaccess>
+ allow from all
+</Files>

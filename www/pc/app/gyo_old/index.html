@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>おさかなの不安定世界 - ぎょっ</title>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<link rel="StyleSheet" href="../../../data/css/common.css?v=20130209_01" type="text/css" />
+		<script type="text/javascript" src="../../../data/js/common.js?v=20130209_01"></script>
+		<script language="JavaScript" type="text/javascript">
+			/**
+				アプレットのサイズ変更.
+			*/
+			function setAppletSize(i) {
+				var SIZES = [
+					[256, 224],
+					[512, 448],
+					[600, 448],
+					[768, 672],
+					[900, 672],
+				];
+				
+				element = document.getElementById("applet");
+				element.width = SIZES[i][0];
+				element.height = SIZES[i][1];
+			}
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<noscript>
+				<div id="no_script">
+					<p>このページは JavaScript が有効でなければ正しく表示されません。</p>
+					<p>あなたがお使いのブラウザは JavaScript に対応していないか、JavaScript が 無効な状態になっています。</p>
+				</div>
+			</noscript>
+			<div class="main-head"></div>
+			<h1>ぎょっ</h1>
+			<div>
+				動作環境：たぶん、java1.1辺りです。<br>
+				IE6に元から付いてるMicrosoft VMのjavaのJITコンパイラで動作確認しましたが、ちょっと不安定です。うんこです。出来れば最新のJavaのランタイムをインストールして下さい。<br>
+				ランタイムDL先:<a href="http://www.java.com/ja/download/">http://www.java.com/ja/download/</a>
+			</div>
+			<div class="app">
+				<applet id="applet" name="Gyo" code ="jp.sanzunokawaosakana.oldgyo.Gyo" archive="gyo.jar" width="256" height="224">
+				</applet>
+			</div>
+			<div class="center">
+				画面サイズ変更：<a href="JavaScript:setAppletSize(0)">原寸大</a>/<a href="JavaScript:setAppletSize(1)">2倍</a>/<a href="JavaScript:setAppletSize(2)">2倍ワイド</a>/<a href="JavaScript:setAppletSize(3)">3倍</a>/<a href="JavaScript:setAppletSize(4)">3倍ワイド</a>
+			</div>
+			※画面サイズ変更は負荷が激しいです。動作が重い場合は普通で遊ぶか、「せってい」の描画クオリティを下げてみて下さい。<br>
+			<div>
+				<img src="keyboard.gif" width="240" height="104">
+			</div>
+			
+			<table class="simple">
+				<tr>
+					<td>
+						<div>プレイヤー1の操作</div>
+					</td>
+					<td>
+						<div>プレイヤー2の操作</div>
+					</td>
+					<td>
+						<div>特殊な操作</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>ショット：Enter</div>
+						<div>　　移動：←↓→↑</div>
+						<div>　ポーズ：P </div>
+					</td>
+					<td>
+						<div>ショット：V</div>
+						<div>　　移動：A S D W</div>
+						<div>　ポーズ：ESC</div>
+					</td>
+					<td>
+						<div>頭飛ばし & 戻し：ショットを素早く2回押す</div>
+					</td>
+				</tr>
+			</table>
+			<div class="main-foot"></div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function() {
+				var osakana4242_website = osakana4242.namespace("osakana4242_website");
+				osakana4242_website.init("../../..");
+			});
+		</script>
+	</body>
+</html>

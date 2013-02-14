@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+/*
+YUI 3.4.1 (build 4118)
+Copyright 2011 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
+
+/* osakana4242
+*/
+body {
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS PゴシックＭＳ Ｐゴシック",sans-serif;
+	background-color: #099;
+}
+
+img {
+	margin: 0px;
+	border-style: none;
+	vertical-align: bottom;
+}
+
+#main {
+}
+hr {
+	height: 1px;
+}
+.right  { text-align: right ; }
+.center { text-align: center; }
+.left   { text-align: left  ; }
+
+.top    { vertical-align: top   ; }
+.middle { vertical-align: middle; }
+.bottom { vertical-align: bottom; }
+
+.mFont {
+	font-size  : 14px;
+}
+
+.sFont {
+	font-size  : 14px;
+}
+
+strong {
+	font-style : normal;
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.drawer {
+	display: none;
+}
+
+#keywords_area {
+	display: none;
+}
+
+body {
+	text-align: center;
+}
+
+#main-out {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main {
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	/*
+	border-style: solid;
+	border-width: 0px 8px;
+	*/
+}
+
+#main p {
+	lint-height: 150%;
+	text-indent: 1em;
+	max-width: 30em;
+}
+	
+div.simple_box {
+	border-style: solid;
+	border-width: 2px;
+	margin : 2px;
+	padding: 2px;
+}
+
+div.app {
+	text-align: center;
+	background-color: #000000;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 3px;
+}
+
+#main a		{ color: #ffffff; text-decoration: none; }
+#main a:link	{ color: #ffffff; }
+#main a:visited	{ color: #ffffff; }
+#main a:active	{ color: #444444; background-color: #888888; }
+#main a:hover 	{ color: #000000; background-color: #88ff88; }
+
+/*背景が明るいときのリンク*/
+a.light         { color: #88ffaa; text-decoration: none; }
+a:link.light    { color: #88ffaa; }
+a:visited.light { color: #88ffaa; }
+a:active.light  { color: #444444; background-color: #888888; }
+a:hover.light   { color: #000000; background-color: #88ff88; }
+
+
+
+/* 広告用 */
+table, table tr, table tr td {
+	background-color: transparent;
+}
+
+/* レイアウト用のテーブル */
+#main table.nospace, #main table.nospace tr, #main table.nospace tr td {
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
+	border-width: 0px;
+	border-collapse: collapse; 
+}
+
+#main table.simple, #main table.simple tr, #main table.simple tr td {
+	margin: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+}
+
+#main .artist-card {
+	margin: 8px;
+}
+
+/*
+ * deffault クラス
+ */
+/**************************************************************/
+body {
+	scrollbar-3dlight-color:    #3399ff;
+	scrollbar-arrow-color:      #3399ff;
+	scrollbar-base-color:       #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-face-color:       #ffffff;
+	scrollbar-highlight-color:  #ffffff;
+	scrollbar-shadow-color:     #3399ff;
+	scrollbar-track-color:      #ffffff;
+	
+	background-color: #ffffff;
+	color: #003030;
+	border-color: #66ccff;
+}
+
+#main {
+	background-color: #d0ffff;
+}
+
+#main h1, h2 {
+	padding: 3px;
+}
+
+#main h1 {
+	background-color: #66ccff;
+	color: #ffffff;
+}
+
+#main h2 {
+	background-color: #66ccff;
+	color: #ffffff;
+	font-family: "ＭＳ Ｐゴシック" "MS UI Gothic";
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+#main .goback {
+	background-color: #66ccff;
+}
+
+#main table, #main table tr, #main table tr td{
+	color: #000000;
+	border-color: #000000;
+}
+#main a         {color: #442288;}
+#main a:link    {color: #442288;}
+#main a:visited {color: #442288;}
+#main a:active  {color: #444444; background-color: #888888;}
+#main a:hover   {color: #ddddff; background-color: #666688;}
+
+/**************************************************************/
+
+/**********************************************************************/
+/*
+ * winter クラス
+ */
+/**************************************************************
+ #main {
+	scrollbar-3dlight-color:    #3399ff;
+	scrollbar-arrow-color:      #3399ff;
+	scrollbar-base-color:       #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-face-color:       #ffffff;
+	scrollbar-highlight-color:  #ffffff;
+	scrollbar-shadow-color:     #3399ff;
+	scrollbar-track-color:      #ffffff;
+	
+	background-color: #f0f0f0;
+	color: #888888;
+	border-color: #888888;
+}
+
+ #main h1 {
+	background-color: #d0d0d0;
+	color: #ffffff;
+}
+
+ #main h2 {
+	background-color: #e0e0e0;
+	font-family: "ＭＳ Ｐゴシック" "MS UI Gothic";
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+ #main .goback {
+	background-color: #e0e0e0;
+}
+
+ #main table,  #main table tr,  #main table tr td{
+	color: #000000;
+	border-color: #000000;
+}
+ #main a         {color: #442288;}
+ #main a:link    {color: #442288;}
+ #main a:visited {color: #442288;}
+ #main a:active  {color: #444444; background-color: #888888;}
+ #main a:hover   {color: #ddddff; background-color: #666688;}
+/**************************************************************/
+
+#main a.button_download {
+	display: inline-block;
+	
+	margin: 4px;
+	padding: 4px 8px;
+	
+	font-weight: bold;
+	
+	border-top :   2px solid #0c4;
+	border-right:  2px solid #0b4;
+	border-bottom: 2px solid #0b4;
+	border-left:   2px solid #0c4;
+	
+	background-color: #0c5;
+	color: #fff;
+	text-shadow:	1px 1px 0px #0c5;
+	
+	border-radius: 3px;  
+	-webkit-border-radius: 3px;  
+	-moz-border-radius: 3px;  
+	
+	box-shadow: 1px 1px 2px #000;
+	-webkit-box-shadow: 1px 1px 4px #000;  
+	-moz-box-shadow: 1px 1px 2px #f00;
+}
+#main a:hover.button_download {
+	background-color: #0b5;
+}
+#main a:visited.button_download {
+	color: #fff;
+}

@@ -1,0 +1,188 @@
+@charset "utf-8";
+img {
+  margin: 0px;
+  border-style: none;
+}
+* {
+  line-height: 130%;
+}
+hr {
+  color: #fff;
+}
+.right {
+  text-align: right ;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left  ;
+}
+.top {
+  vertical-align: top   ;
+}
+.middle {
+  vertical-align: middle;
+}
+.bottom {
+  vertical-align: bottom;
+}
+.mFont {
+  font-size: 10pt;
+  font-family: "ＭＳ ゴシック";
+}
+.sFont {
+  font-size: 10pt;
+  font-family: "MS UI Gothic";
+}
+em {
+  font-style: normal;
+  font-size: 120%;
+  color: #88ddff;
+  /*color: #ffff88;*/
+
+}
+.drawer {
+  display: none;
+}
+#keywords_area {
+  display: none;
+}
+#main-out {
+  width: 800px;
+  margin: auto;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  background-repeat: "repeat";
+  background-attachment: "scroll";
+  background-position: "top";
+}
+#main {
+  background-color: #333;
+  color: #fff;
+  font-family: "ＭＳ ゴシック", sansserif;
+  padding: 3px;
+}
+#main p {
+  text-indent: 1em;
+  max-width: 30em;
+}
+div.simple_box {
+  border-style: solid;
+  border-width: 2px;
+  margin: 2px;
+  padding: 2px;
+}
+#main a {
+  color: #ffffff;
+  text-decoration: none;
+}
+#main a:link {
+  color: #ffffff;
+}
+#main a:visited {
+  color: #ffffff;
+}
+#main a:active {
+  color: #444444;
+  background-color: #888888;
+}
+#main a:hover {
+  color: #000000;
+  background-color: #88ff88;
+}
+/*背景が明るいときのリンク*/
+a.light {
+  color: #88ffaa;
+  text-decoration: none;
+}
+a:link.light {
+  color: #88ffaa;
+}
+a:visited.light {
+  color: #88ffaa;
+}
+a:active.light {
+  color: #444444;
+  background-color: #888888;
+}
+a:hover.light {
+  color: #000000;
+  background-color: #88ff88;
+}
+/* 広告用 */
+table, table tr, table tr td {
+  background-color: transparent;
+}
+/* レイアウト用のテーブル */
+#main table.nospace, #main table.nospace tr, #main table.nospace tr td {
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+  border-width: 0px;
+  border-collapse: collapse;
+}
+#main table.simple, #main table.simple tr, #main table.simple tr td {
+  margin: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+}
+.comment {
+  width: 40em;
+  border-style: solid;
+  border-width: 2px;
+  margin: 2px;
+  padding: 2px;
+  background-color: #448866;
+  font-family: "へた字", sansserif;
+}
+div.fukidasi {
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  padding: 2px;
+  background-color: #000000;
+  border-style: solid;
+  border-width: 3px;
+  width: 40%;
+  height: 8em;
+  font-family: "へた字", "ＭＳ ゴシック";
+  font-size: 11pt;
+  display: none;
+}
+.winter #main a {
+  color: #442288;
+}
+.winter #main a:link {
+  color: #442288;
+}
+.winter #main a:visited {
+  color: #442288;
+}
+.winter #main a:active {
+  color: #444444;
+  background-color: #888888;
+}
+.winter #main a:hover {
+  color: #ddddff;
+  background-color: #666688;
+}
+/* 広告 */
+a {
+  color: #ffffff;
+}
+a:link {
+  color: #ffffff;
+}
+a:visited {
+  color: #ffffff;
+}
+a:active {
+  color: #ffffff;
+}
+a:hover {
+  color: #ffffff;
+}

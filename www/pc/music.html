@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>おさかなの不安定世界</title>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<link rel="StyleSheet" type="text/css" href="../data/css/common.css?v=20130209_01" />
+		<script type="text/javascript" src="../data/js/common.js?v=20130209_01"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div class="main-head"></div>
+			<h1>おんがく</h1>
+			
+			<style>
+				.popup {
+					position: absolute;
+					z-index: 10;
+					padding: 4px;
+					color: #000;
+					background-color: #ff0;
+					box-shadow: 1px 1px 4px #880;
+					border-radius: 8px;
+					-webkit-border-radius: 8px;  
+					-moz-border-radius: 8px;  
+					display: none;
+				}
+				.popup .close {
+					text-align: center;
+					vertical-align: middle;
+					font-size: 16px;
+					font-weight: bold;
+					line-height: 100%;
+					display: inline-block;
+					cursor: pointer;
+				}
+				.favorite {
+					cursor: pointer;
+				}
+				.comment {
+					background-color: #fff;
+					color: #888;
+					padding: 4px;
+					margin: 4px;
+					border-radius: 8px;
+					-webkit-border-radius: 8px;  
+					-moz-border-radius: 8px;
+					max-width: 600px;
+				}
+			</style>
+			<div id="music-list"></div>
+			<script id="music-list-tmpl" type="text/x-jquery-tmpl">
+				<h2>${title}</h2>
+				<div>
+					{{each songs}}
+						<div class="card-default">
+							<h3>
+								{{if is_new}}
+									<span class="icon-new">NEW!</span>
+								{{/if}}
+								${title}
+							</h3>
+							<div>
+								{{if url}}
+									<a class="button download" href="../${url}" target="_blank">DL</a>
+								{{/if}}
+								<a class="favorite button">イイネ！<input type="hidden" name="id" value="${id}" /></a>
+								{{if url_nico}}
+									<a class="button" href="${url_nico}" target="_blank">ニコニコ動画</a>
+								{{/if}}
+								{{if url_youtube}}
+									<a class="button" href="${url_youtube}" target="_blank">youtube</a>
+								{{/if}}
+								<br />
+								{{if url_img}}
+									<span style="display: inline-block; padding: 4px; float: left;">
+										<a href="${url_img}"><img src="${url_img}" width="80" height="80" /></a>
+									</span>
+								{{/if}}
+								{{if comment}}
+									<div class="comment" style="float: left;">{{html comment}}</div>
+								{{/if}}
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+					{{/each}}
+				</div>
+			</script>
+				
+			<br />
+			
+			<div class="main-foot"></div>
+			
+			<div id="message-area" class="popup">
+				<div style="text-align: right;"><span class="close">×</span></div>
+				<div class="message"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function() {
+				"use strict";
+				var global = window;
+				var _gaq = global._gaq;
+				
+				$('#message-area').find(".close").click(function () {
+					$('#message-area').fadeOut('fast');
+				});
+				
+				var DF = {};
+				DF.MUSIC_DATA = [
+					{
+						'title': 'オウムソングのアレンジ',
+						'songs': [
+							{
+								'id': 'asahara_choetsu',
+								'title': '超越神力 キラキラ・ミックス',
+								'url': 'data/mp3/asahara_choetsu.mp3',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm9848236',
+								'url_img': '../data/img/music/choetsu.jpg',
+							},
+							{
+								'id': 'asahara_choetsu_karaoke',
+								'title': '超越神力 キラキラ・ミックス(カラオケ)',
+								'url': 'data/mp3/asahara_choetsu_karaoke.mp3'
+							},
+							{
+								'id': 'asahara_famicon',
+								'title': '麻原彰晃ファミリーコンサート2004～ゲスト 福永法源～',
+								'url': 'data/mp3/asahara_famicon.mp3',
+								'url_img': '../data/img/music/asahara_famicon.gif',
+								'comment': 'オウムソングのテクノポップなアレンジメドレー＋αです。<br />電気グルーヴのイルボン2000というアルバムに影響を受けています。<br />現状いちばんの力作。オススメです。',
+							},
+							{
+								'id': 'asahara_march',
+								'title': '麻原彰晃マーチ -洗脳mix-',
+								'url': 'data/mp3/asahara_march.mp3',
+								'url_img': '../data/img/music/asahara_march.gif',
+								'comment': 'オウムソングの中で最も有名と思われるしょーこーしょーこーの曲のテクノポップアレンジです。<br />ショーコーの洗脳ボイスの他、信者たちのあぶない発言が紛れています。',
+							},
+							{
+								'id': 'asahara_tantora',
+								'title': 'めざせタントラヤーナ、もすかうのように(タントラヤーナのアレンジ)',
+								'url': 'data/mp3/asahara_tantora.mp3',
+								'url_img': '../data/img/music/mez.jpg',
+								'comment': 'タントラヤーナをもすかうっぽくアレンジしました。<br />オウムソングの中には宇宙戦艦ヤマトに酷似した「救えオウム　ヤマトのように」という曲があるのですが、曲名はこれを参考にしました。',
+							},
+							{
+								'id': 'asahara_shanbara',
+								'title': 'シャンバラ・シャンバラ リミックス(仮)',
+								'url': 'data/mp3/asahara_shanbara.mp3',
+								'comment': 'ジャンバラ・シャンバラはオウムの専属オーケストラ「キーレーン」が演奏するカッコイイ曲です。それを少しアレンジしました。',
+							},
+							{
+								'id': 'asahara_march_2007',
+								'title': '麻原彰晃マーチ2007(仮)',
+								'url': 'data/mp3/asahara_march_2007.mp3'
+							},
+						]
+					},
+					{
+						'title': 'その他宗教ネタ',
+						'songs': [
+							{
+								'id': 'hev_saiko',
+								'title': '最高 最高 最高(Swindle Mix)',
+								'url': 'data/mp3/hev_saiko.mp3',
+								'url_img': '../data/img/music/hev_saiko.jpg',
+							},
+							{
+								'id': 'osa_kam',
+								'title': '神々の黄昏',
+								'url': 'data/mp3/osa_kam.mp3',
+								'url_img': '../data/img/music/osa_kam.gif',
+								'comment': 'テキトーなリズムにカルト宗教(オウム、法の華、ライフスペース)の代表のボイスを乗っけました。'
+							},
+						]
+					},
+					{
+						'title': '自作(うたもの)',
+						'songs': [
+							{
+								'id': 'osa_atamani_hebi',
+								'title': '頭にヘビ',
+								'url': 'data/mp3/osa_atamani_hebi.mp3',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm16402296',
+								'url_youtube': 'http://www.youtube.com/watch?v=mSSPdMOLRgs',
+								'url_img': '../data/img/music/atamani_hebi.jpg',
+								'is_new': true,
+								'comment': '二度寝したときに見る変な夢のような出来事をたんたんと並べて歌詞を作りました。<br />源平討魔伝の琵琶法師のテーマみたいのが紛れている。<br />ジャンルはたぶんニューウェーブ。<br /><br />ボーカル:桃音モモ,重音テト,初音ミク',
+							},
+							{
+								'id': 'osa_atamani_hebi_karaoke',
+								'title': '頭にヘビ(カラオケ)',
+								'url': 'data/mp3/osa_atamani_hebi_karaoke.mp3',
+							},
+							{
+								'id': 'osa_hareno_amaoto',
+								'title': '晴れの雨音',
+								'url': 'data/mp3/osa_hareno_amaoto.mp3',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm14859069',
+								'url_img': '../data/img/music/hareno_amaoto.jpg',
+								'comment': 'テーマは中二病の子供と妖怪。<br />曲調は「たま」に影響を受けています。<br /><br />ボーカル:重音テト',
+							},
+							{
+								'id': 'osa_hareno_amaoto_karaoke',
+								'title': '晴れの雨音(カラオケ)',
+								'url': 'data/mp3/osa_hareno_amaoto_karaoke.mp3',
+							},
+							{
+								'id': 'osa_itsumanonica',
+								'title': 'イツマノニカ',
+								'url': 'data/mp3/osa_itsumanonica.mp3',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm11767225',
+								'url_img': '../data/img/music/itsumanonica.png',
+								'comment': 'ちょっと不思議ちゃんな曲。<br />ポテチをかじる音が入ってます。<br />ジャンルはたぶんニューウェーブ。<br />うたものをマジメに作った初めての作品。<br /><br />ボーカル:桃音モモ',
+							},
+							{
+								'id': 'osa_itsumanonica_karaoke',
+								'title': 'イツマノニカ(カラオケ)',
+								'url': 'data/mp3/osa_itsumanonica_karaoke.mp3'
+							},
+						]
+					},
+					{
+						'title': '自作(電子音系のインスト)',
+						'songs': [
+							{
+								'id': 'osa_gyo',
+								'title': 'ぎょっ・クロスフェード・メドレー',
+								'url_img': '../data/img/music/osa_gyo.gif',
+								'url': 'data/mp3/osa_gyo.mp3'
+							},
+							{
+								'id': 'osa_hik',
+								'title': 'ひかり探索',
+								'url_img': '../data/img/music/osa_hik.gif',
+								'url': 'data/mp3/osa_hik.mp3'
+							},
+							{
+								'id': 'osa_hit',
+								'title': 'ひと雨来るぞ',
+								'url': 'data/mp3/osa_hit.mp3',
+								'url_img': '../data/img/music/osa_hit.gif',
+								'comment': 'お祭りやってるところに突然どしゃぶりの雨がやってきて、涼しくなるイメージです。田んぼのかえるの声が聞けるよ！<br />2003年ごろの作品でしょぼいのですがお気に入りです。'
+							}
+						]
+					},
+					{
+						'title': '自作(吹奏楽系のインスト)',
+						'songs': [
+							{
+								'id': 'osa_moj',
+								'title': 'もうじき日が暮れる',
+								'url': 'data/mp3/osa_moj.mp3'
+							},
+							{
+								'id': 'osa_kon',
+								'title': '紺クレヨンの森',
+								'url': 'data/mp3/osa_kon.mp3'
+							},
+						]
+					},
+					{
+						'title': '自作(？？？)',
+						'songs': [
+							{
+								'id': 'osa_kimura',
+								'title': '陰毛教師キムラ',
+								'url': 'data/mp3/osa_kimura.mp3',
+								'url_img': '../data/img/music/kimura.jpg',
+								'comment': ' 架空の教師キムラの授業の様子を曲にしました。イラっとします。<br />キムラ役はあかぎ恋さん。',
+							},
+						]
+					},
+				];
+				var $tmpl = $("#music-list-tmpl").tmpl(DF.MUSIC_DATA);
+				// テンプレに関数関連付け.
+				$tmpl.find(".favorite").click(function () {
+					var $this = $(this);
+					var trackEventLabel = $this.find("input[name='id']").attr('value');
+					_gaq.push(['_trackEvent', 'music', 'favorite', trackEventLabel]);
+					
+					var $element = $('#message-area');
+					var position = $this.position();
+					$element.css({
+						'display': 'none',
+						'left': position.left + 'px',
+						'top': position.top + 'px'
+					});
+					$element.find(".message").text('さんくす！');
+					$element.fadeIn('fast');
+					
+					// console.log("click:" + $this.attr('title'));
+				});
+				
+				$tmpl.find("a.download").click(function () {
+					var label = $(this).get(0).href;
+					_gaq.push(['_trackEvent', 'music', 'download', label]);
+				});
+				
+				// bodyに追加.
+				$tmpl.appendTo('#music-list');
+			});
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				var osakana4242_website = osakana4242.namespace("osakana4242_website");
+				osakana4242_website.init("..");
+			});
+		</script>
+	</body>
+</html>

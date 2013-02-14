@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>iTunesふりかけ(iTunesに取り込んだ曲に自動でなんとなく読みがなを振るプログラム)</title>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<link rel="StyleSheet" href="../data/css/common.css?v=20130114_01" type="text/css" />
+	</head>
+	
+	<body>
+		<div id="main">
+			<div class="main-head"></div>
+			このコンテンツは<a href="./pc/tool/itunes_furikake.html">こちら</a>に移動しました。
+			<div class="main-foot"></div>
+		</div>
+		
+		<div id="script-area">
+			<script type="text/javascript" src="data/js/common.js?v=20120605_01"></script>
+			<script type="text/javascript">
+				$(function() {
+					var osakana4242_website = osakana4242.namespace("osakana4242_website");
+					osakana4242_website.init(".");
+					
+					window.setTimeout(function () {
+						window.location.href = "./pc/tool/itunes_furikake.html";
+					}, 3000);
+				});
+			</script>
+			<!-- google analytics open -->
+				<script type="text/javascript">
+					var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+					document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+					try {
+						var pageTracker = _gat._getTracker("UA-11051536-4");
+						pageTracker._trackPageview();
+					} catch(err) {}
+				</script>
+			<!-- google analytics close -->
+		</div>
+	</body>
+</html>

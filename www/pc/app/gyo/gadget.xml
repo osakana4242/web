@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Module>
+	<ModulePrefs title="Gyo">
+		<Require feature="opensocial-0.8" />
+		<Require feature="dynamic-height" />
+		<Optional feature="content-rewrite">
+			<Param name="exclude-urls"></Param>
+			<Param name="exclude-urls">.*</Param>
+			<Param name="include-tags"></Param>
+		</Optional>
+	</ModulePrefs>
+	
+	
+	<Content view="home">
+		<![CDATA[
+				ホームビュー
+		]]>
+	</Content>
+	<Content view="canvas">
+		<![CDATA[
+			<div id="main">
+				<div style="padding: 8px; background-color: #000000; color: #ffffff;">
+					<div id="appletArea" class="app" style="text-align: center;">
+						<div style=" width: 512px; height: 448px; margin-left: auto; margin-right: auto;">
+							<applet id="applet"
+								 name="gyo"
+								 codebase="http://www15.plala.or.jp/sasimi/pc/app/gyo"
+								 code ="jp.sanzunokawaosakana.gyo.App"
+								 archive="http://www15.plala.or.jp/sasimi/pc/app/gyo/gyo.jar?date=17"
+								 width="512"
+								 height="448"
+								 >
+							</applet>
+						</div>
+					</div>
+				</div>
+				<div style="padding: 8px;">
+					<h2>あそびかた</h2>
+					<div>
+						方向:ASDW<br />
+						ボタン1:V<br />
+						ボタン2:B<br />
+						ボタン3:N<br />
+					</div>
+					<h2>こうしんりれき</h2>
+					<ul>
+						<li>
+							2011.02.14<br />
+							[更新]エイっぽいものがでてくるように。<br />
+							[更新]BGMの音色調整。<br />
+						</li>
+						<li>
+							2011.02.11<br />
+							[更新]ヤドカリっぽいものがでてくるように。<br />
+						</li>
+						<li>
+							2011.02.07<br />
+							[更新]BGM,SEをぜんぶmidiファイルから再生するようにした。容量が1MB超えから280KBになった。<br />
+						</li>
+						<li>
+							2010.08.25<br />
+							[更新]ボタン2でかみつき。ボタン3でうんこ。<br />
+						</li>
+						<li>
+							2010.07.15<br />
+							[更新]多重スクロールをつけてみた<br />
+						</li>
+						<li>
+							2010.06.04<br />
+							[不具合修正]自走式ミサイルがまともに地面を走らない<br />
+							[不具合修正]敵と重なってないのに突如自機が爆発する<br />
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript" src="http://www15.plala.or.jp/sasimi/pc/app/gyo/gadget.js?14"></script>
+		]]>
+	</Content>
+	<Content view="profile">
+		<![CDATA[
+				プロフィールビュー
+		]]>
+	</Content>
+</Module>
