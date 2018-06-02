@@ -151,7 +151,7 @@ var makefooter = function(rootPath) {
 		'<div style="text-align: right; font-size: 12px;">'
 			+ '▲<a href="#">このページの上部へ</a>'
 		+ '</div>'
-		+ '三途の川おさかな(2002-2015)'
+		+ '三途の川おさかな(2002-2018)'
 		
 		
 		+ '<script type="text/javascript" src="https://apis.google.com/js/plusone.js">'
