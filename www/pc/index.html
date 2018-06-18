@@ -96,19 +96,19 @@
 							background-color: #fff;
 						}
 					</style>
-					<a id="a_hello" href="hello.html">ごあいさつ</a><br />
 					<a id="a_music" href="music.html">おんがく</a><br />
 					<a id="a_tool_list" href="tool/itunes_furikake.html">便利ツール</a><br />
-					<a id="a_illust" href="illust.html">週刊お絵かき</a><br />
 					<!--
+					<a id="a_illust" href="illust.html">週刊お絵かき</a><br />
 					<a href="story/index.html"
 						onMouseOver="osakana4242.global.html.setInfo('../data/img/g_story.gif', '呪いめるへん。')"
 						onMouseOut ="osakana4242.global.html.setInfo('../data/img/g_neko.gif' , '')">おはなし</a><br />
-					-->
 					<a id="a_melody" href="melody.html">着メロ</a><br />
+					-->
 					<a id="a_bbs" href="http://www4.rocketbbs.com/141/sasimi.html">掲示板</a><br />
 						
 					<a id="a_blog" href="http://d.hatena.ne.jp/osakana_4242/">ブログ</a><br />
+					<a id="a_hello" href="hello.html">だれ？</a><br />
 					<div class="menu-line"></div>
 					<div>
 						ブラウザゲーム<br>
@@ -132,6 +132,11 @@
 					</div>
 					<div style="font-size: 12px; padding: 4px;">
 						<ul>
+							<li>
+								2018年06月19日:<br />
+								[追加]おんがく→<a href="./music.html">夜のぜんぜんだめ (カラオケ)</a><br />
+								[更新]しんでるコンテンツをしまったり説明を更新したり？<br />
+							</li>
 							<li>
 								2018年06月02日:<br />
 								[追加]おんがく→<a href="./music.html">夜のぜんぜんだめ</a><br />
@@ -293,7 +298,7 @@
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_hello")
-						.mouseover(function() { html.setInfo('../data/img/g_hello.gif', 'こんにちは。このウェブページの管理人の紹介です。'); })
+						.mouseover(function() { html.setInfo('../data/img/g_hello.gif', 'だれだ、こんなサイト作ったのは'); })
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_music")
@@ -313,19 +318,19 @@
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_blog")
-						.mouseover(function() { html.setInfo('../data/img/g_diary.gif', 'twitterをやり出してから、更新頻度がげきげん！'); })
+						.mouseover(function() { html.setInfo('../data/img/g_diary.gif', '3日も続かない！1年に1度、更新があれば良いほう。<br>まいにち書いてた時期もあったんだよ'); })
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_catraid")
-						.mouseover(function() { html.setInfo('../data/img/g_catraid.jpg', '動物虐待ゲームです。ブラウザ上で昔は遊べました。JavaApplet。'); })
+						.mouseover(function() { html.setInfo('../data/img/g_catraid.jpg', 'しんでる。動物虐待ゲームです。ブラウザ上で昔は遊べました。JavaApplet。'); })
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_gyo")
-						.mouseover(function() { html.setInfo('../data/img/g_gyo.gif', '横スクロールのシューティングゲームです。ブラウザ上で昔は遊べました。JavaApplet。'); })
+						.mouseover(function() { html.setInfo('../data/img/g_gyo.gif', 'しんでる。横スクロールのシューティングゲームです。ブラウザ上で昔は遊べた。JavaApplet。'); })
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_typing")
-						.mouseover(function() { html.setInfo('../data/img/g_app_typing.jpg', 'タイピングゲームです。ブラウザ上で遊べない。高校のときに自由課題かなんかで作ったものです。'); })
+						.mouseover(function() { html.setInfo('../data/img/g_app_typing.jpg', 'しんでる。タイピングゲームです。ブラウザ上でしんでる。高校のときに自由課題かなんかで作ったものです。JavaApplet。'); })
 						.mouseout(clearInfo)
 						;
 					$this.find("#a_analyzer")

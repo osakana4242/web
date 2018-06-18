@@ -132,12 +132,12 @@ var makeHeader = function(rootPath) {
 		'<a href="${rootPath}/pc/index.html"><img src="${rootPath}/data/img/title.gif" width="480" height="43" /></a><br />'
 		+ '<div class="menu">'
 			+ ' <a href="${rootPath}/pc/index.html">トップ</a>'
-			+ ' <a href="${rootPath}/pc/hello.html">ごあいさつ</a>'
 			+ ' <a href="${rootPath}/pc/music.html">おんがく</a>'
-			+ ' <a href="${rootPath}/pc/melody.html">着メロ</a>'
+			// + ' <a href="${rootPath}/pc/melody.html">着メロ</a>'
 			+ ' <a href="${rootPath}/pc/tool/itunes_furikake.html">便利ツール</a>'
 			+ ' <a href="http://d.hatena.ne.jp/osakana_4242/">ブログ</a>'
 			+ ' <a href="http://www4.rocketbbs.com/141/sasimi.html">掲示板</a>'
+			+ ' <a href="${rootPath}/pc/hello.html">だれ？</a>'
 		+ '</div>'
 	);
 	var $tmpl = $.tmpl(tmplData, {'rootPath': rootPath});
