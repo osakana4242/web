@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<link rel="StyleSheet" type="text/css" href="../data/css/common.css?v=20180602_01" />
-		<script type="text/javascript" src="../data/js/common.js?v=20180602_01"></script>
+		<script type="text/javascript" src="../data/js/common.js?v=20180619_01"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -78,6 +78,9 @@
 								{{if url_karaoke}}
 									<a class="button download" href="http://osakana4242.sakura.ne.jp/web/${url_karaoke}" target="_blank">ダウンロード (カラオケ)</a>
 								{{/if}}
+								{{if url_lyric}}
+									<a class="button download" href="${url_lyric}" target="_blank">歌詞</a>
+								{{/if}}
 								{{if url_nico}}
 									<a class="button" href="${url_nico}" target="_blank">ニコニコ動画</a>
 								{{/if}}
@@ -122,6 +125,7 @@
 								'date': '2018-05-26',
 								'url': 'data/mp3/osk_yoru_no_zenzendame.mp3',
 								'url_karaoke': 'data/mp3/osk_yoru_no_zenzendame_karaoke.mp3',
+								'url_lyric': 'yoru_no_zenzendame.html',
 								'url_nico': 'http://www.nicovideo.jp/watch/sm33269089',
 								'url_youtube': 'https://www.youtube.com/watch?v=CdoUFB6kvUg',
 								'url_img': '../data/img/music/osk_yoru_no_zenzendame.jpg',
@@ -133,6 +137,7 @@
 								'title': '頭にヘビ',
 								'url': 'data/mp3/osa_atamani_hebi.mp3',
 								'url_karaoke': 'data/mp3/osa_atamani_hebi_karaoke.mp3',
+								'url_lyric': 'atama_ni_hebi.html',
 								'url_nico': 'http://www.nicovideo.jp/watch/sm16402296',
 								'url_youtube': 'http://www.youtube.com/watch?v=mSSPdMOLRgs',
 								'url_img': '../data/img/music/atamani_hebi.jpg',
@@ -144,6 +149,7 @@
 								'title': '晴れの雨音',
 								'url': 'data/mp3/osa_hareno_amaoto.mp3',
 								'url_karaoke': 'data/mp3/osa_hareno_amaoto_karaoke.mp3',
+								'url_lyric': 'hare_no_amaoto.html',
 								'url_nico': 'http://www.nicovideo.jp/watch/sm14859069',
 								'url_img': '../data/img/music/hareno_amaoto.jpg',
 								'comment': '中二病の子供と妖怪。<br>「たま」に影響を受けた曲長。<br><br>うた: 重音テト',
@@ -153,6 +159,7 @@
 								'title': 'イツマノニカ',
 								'url': 'data/mp3/osa_itsumanonica.mp3',
 								'url_karaoke': 'data/mp3/osa_itsumanonica_karaoke.mp3',
+								'url_lyric': 'itsumanonica.html',
 								'url_nico': 'http://www.nicovideo.jp/watch/sm11767225',
 								'url_img': '../data/img/music/itsumanonica.png',
 								'comment': 'ちょっと不思議ちゃんな曲。<br>ポテチをかじる音が入ってます。<br>ジャンルはたぶんニューウェーブ。<br>うたものをマジメに作った初めての作品。<br><br>うた: 桃音モモ',
