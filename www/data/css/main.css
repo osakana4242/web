@@ -1,0 +1,99 @@
+
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #44bbff;
+	color: #ffffff;
+}
+
+#main-header {
+	text-align: center;
+}
+
+#main-header .menu a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#main-footer {
+	text-align: center;
+}
+
+main-footer {
+	text-align: center;
+}
+
+#main-body-outer {
+	background-color: #f0f0f0;
+	color: #000000;
+}
+
+#main-body {
+	width: 800px;
+	padding: 0px;
+	background-color: #fffff0;
+	margin: auto;
+}
+
+@media (max-width: 800px) {
+	#main-body {
+		width: auto;
+	}
+}
+
+.site-title {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.btn-s {
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 8px;
+	background-color: #f0f0f0;
+	color: #000000;
+	padding: 8px;
+	margin: 4px 0px;
+	min-width: 4em;
+	text-align: center;
+}
+
+.v-separator:after {
+	content: ' | ';
+}
+
+.btn-primary {
+	background-color: #44bbff;
+	color: #ffffff;
+}
+
+.btn-secondary {
+	background-color: #888888;
+	color: #ffffff;
+}
+
+.btn-success {
+	background-color: #44cc44;
+	color: #ffffff;
+}
+
+/**
+ * 黒背景はかっこいいけど、ブログ側との色が合わない、親しみやすさが足りない。
+ * 白背景は親しみやすい
+ */
+
+
+
+#main-body h1 {
+	border-color: #8888ff;
+	background-color: #ccccff;
+	color: #444444;
+}
+
+#main-body h2 {
+	border-bottom-style: solid;
+	border-bottom-width: 0.1em;
+	border-color: #8888ff;
+	color: #444444;
+}
+

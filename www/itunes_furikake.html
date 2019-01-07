@@ -1,44 +1,103 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8" />
-		<title>iTunesふりかけ(iTunesに取り込んだ曲に自動でなんとなく読みがなを振るプログラム)</title>
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<link rel="StyleSheet" href="../data/css/common.css?v=20130114_01" type="text/css" />
+		<meta charset="utf-8" />
+		<title>iTunesふりかけ(iTunesに取り込んだ曲に自動で読みがなを振る)</title>
+		<meta name="description"
+			content="iTunesに取り込んだ曲に自動でなんとなく読みがなを振るプログラムです。"
+		/>
+		<meta name="keywords"
+			content="iTunes iPod 読みがな 読み ふりがな ルビ 自動 ふりがなを自動で振る 並び順"
+		/>
+		<link rel="StyleSheet" type="text/css" href="./data/css/main.css">
 	</head>
 	
 	<body>
 		<div id="main">
-			<div class="main-head"></div>
-			このコンテンツは<a href="./pc/tool/itunes_furikake.html">こちら</a>に移動しました。
-			<div class="main-foot"></div>
+			<header id="main-header">
+				<h1></h1>
+				<nav></nav>
+			</header>
+
+			<div id="main-body-outer">
+				<div id="main-body">
+					<div class="page-title">
+						<h1>iTunesふりかけ</h1>
+						漢字タイトルのせいで曲の並び順がぐちゃぐちゃな方へ。<br>
+						自動で読みがなを振ることで、曲の並び順をマシにするソフトです。<br>
+					</div>
+					<br>
+					<a class="btn-s btn-success" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_1_3.zip">
+						ダウンロード (itunes_furikake_v2_1_3.zip)<br>
+						2013.11.04 release
+					</a><br>
+					<!-- <a id="a_twitter" class="button_download" style="visibility: hidden; cursor: pointer;">twitterでつぶやく</a><br> -->
+					<!-- <div class="g-plusone"></div> -->
+					<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+
+					<br>
+					動作環境：WindowsXP, WindowsVista, Windows7, Windows8(動作未確認)<br>
+					実行に必要なプログラム：<br>
+					・iTunes → <a href="http://www.apple.com/jp/itunes/download/">探しに行く</a><br>
+					・Microsoft .NET Framework 4 Client Profile → <a href="http://www.microsoft.com/downloads/ja-jp/details.aspx?FamilyID=E5AD0459-CBCC-4B4F-97B6-FB17111CF544">探しに行く</a><br>
+					・Microsoft IME<br>
+					<br>
+					<h2>以前のバージョン</h2>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_1_3.zip">itunes_furikake_v2_1_3.zip</a><br>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_1_2.zip">itunes_furikake_v2_1_2.zip</a><br>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_1_1.zip">itunes_furikake_v2_1_1.zip</a><br>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_1_0.zip">itunes_furikake_v2_1_0.zip</a><br>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v2_0_0.zip">itunes_furikake_v2_0_0.zip</a><br>
+					<a class="download" href="../../data/contents/itunes_furikake/zip/itunes_furikake_v1_0_0.zip">itunes_furikake_v1_0_0.zip</a><br>
+					<br>
+					<h2>スクリーンショット</h2>
+					<br>
+					ひらがなで読みを振る<br>
+					<a href="../../data/contents/itunes_furikake/img/ss_hiragana.gif"><img src="../../data/contents/itunes_furikake/img/ss_hiragana.gif" width="590" height="560" /></a><br>
+					<br>
+					カタカナで読みを振る<br>
+					<a href="../../data/contents/itunes_furikake/img/ss_katakana.gif"><img src="../../data/contents/itunes_furikake/img/ss_katakana.gif" width="590" height="560" /></a><br>
+					<br>
+					ローマ字で読みを振る<br>
+					<a href="../../data/contents/itunes_furikake/img/ss_rome.gif"><img src="../../data/contents/itunes_furikake/img/ss_rome.gif" width="590" height="560" /></a><br>
+					<br>
+					<div>
+						検索用キーワード：iTunes iPod 読みがな 読み ふりがな ルビ 自動 ふりがなを自動で振る 並び順
+					</div>
+				</div>
+			</div>
+			<footer id="main-footer">
+			</footer>
 		</div>
 		
 		<div id="script-area">
-			<script type="text/javascript" src="data/js/common.js?v=20120605_01"></script>
+
+			<script src="./data/js/common1.js?"></script>
+			<script src="./data/js/common2.js?"></script>
+
 			<script type="text/javascript">
 				$(function() {
 					var osakana4242_website = osakana4242.namespace("osakana4242_website");
 					osakana4242_website.init(".");
-					
-					window.setTimeout(function () {
-						window.location.href = "./pc/tool/itunes_furikake.html";
-					}, 3000);
 				});
 			</script>
-			<!-- google analytics open -->
-				<script type="text/javascript">
-					var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-					document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-				</script>
-				<script type="text/javascript">
-					try {
-						var pageTracker = _gat._getTracker("UA-11051536-4");
-						pageTracker._trackPageview();
-					} catch(err) {}
-				</script>
-			<!-- google analytics close -->
+
+			<script type="text/javascript">
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			</script>
+
+			<script type="text/javascript">
+				$(function() {
+					// twitter ボタンの href 属性を設定して表示する.
+					$("#a_twitter")
+						.attr("href", "https://twitter.com/home?status=" + encodeURI("iTunesの曲の並び順に困ってるひと向け https://osakana4242.sakura.ne.jp/pc/tool/itunes_furikake.html"))
+						.css("visibility", "visible");
+					$("a.download").click(function () {
+						var label = this.href;
+						_gaq.push(['_trackEvent', "zip", "download", label]);
+					});
+				});
+			</script>
 		</div>
 	</body>
 </html>

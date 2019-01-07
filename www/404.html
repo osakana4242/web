@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<title>おさかなの不安定世界 - 404 not found</title>
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<link rel="StyleSheet" href="https://osakana4242.sakura.ne.jp/data/css/common.css?v=20120605_01" type="text/css" />
-		<script type="text/javascript" src="https://osakana4242.sakura.ne.jp/data/js/common.js?v=20120605_01"></script>
+		<link rel="StyleSheet" type="text/css" href="./data/css/main.css?">
 	</head>
 	
 	<body>
 		<div id="main">
-			<div class="main-head"></div>
-			<h1>404 NOT FOUND</h1>
-			※ 指定されたページ(URL)は見つかりません。<br />
-			<br />
-			以下のような理由が考えられます<br />
-			URLに間違いがないか、再度ご確認ください。<br />
-			ファイルが削除・またはファイル名が変更されている可能性があります。<br />
-			<div class="main-foot"></div>
+			<header id="main-header">
+				<h1></h1>
+				<nav></nav>
+			</header>
+
+			<div id="main-body-outer">
+				<div id="main-body">
+					<h1>404 NOT FOUND</h1>
+					指定されたページ(URL)は見つかりません。<br>
+					<br>
+					以下のような理由が考えられます。<br>
+					・ファイルが削除された<br>
+					・ファイル名が変更された<br>
+					・URLを間違えた<br>
+					<a class="btn-s btn-primary" href="./">トップ</a><br>
+				</div>
+			</div>
+
+			<footer id="main-footer">
+			</footer>
 		</div>
 
 		
+		<script src="./data/js/common1.js?"></script>
+		<script src="./data/js/common2.js?"></script>
+
 		<script type="text/javascript">
 			$(function() {
 				var osakana4242_website = osakana4242.namespace("osakana4242_website");
-				osakana4242_website.init("https://osakana4242.sakura.ne.jp");
+				osakana4242_website.init(".");
 			});
 		</script>
-		<!-- google analytics open -->
-			<script type="text/javascript">
-				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-			</script>
-			<script type="text/javascript">
-				try {
-					var pageTracker = _gat._getTracker("UA-11051536-4");
-					pageTracker._trackPageview();
-				} catch(err) {}
-			</script>
-		<!-- google analytics close -->
+
 	</body>
 </html>

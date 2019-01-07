@@ -1,2 +1,37 @@
+# .htaccess について:
+#   https://murashun.jp/blog/20141229-01.html#chapter-2
+
 AddType application/x-smaf .mmf
 AddType application/x-mld .mld
+
+# http を https リダイレクトする.
+SetEnvIf REDIRECT_HTTPS (.*) HTTPS=$1 
+<IfModule mod_rewrite.c>
+	RewriteEngine on 
+	RewriteCond %{ENV:HTTPS} !on 
+	RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L] 
+</IfModule>
+ 
+ErrorDocument 404 /404.html
+
+<ifModule mod_expires.c>
+	# ExpiresActive ディレクティブを有効にする
+	ExpiresActive On
+	ExpiresDefault "access 3599 seconds"
+	ExpiresByType text/html "access 299 seconds"
+</ifModule>
+
+<ifModule mod_deflate.c>
+	# mod_deflate を有効にする
+	SetOutputFilter DEFLATE
+	# レガシーブラウザは gzip 圧縮を行わない
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+	# 画像ファイルはgzip圧縮を行わない
+	SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|ico)$ no-gzip dont-vary
+	# プロキシサーバ用の設定
+	Header append Vary User-Agent env=!dont-vary
+
+</ifModule>
+

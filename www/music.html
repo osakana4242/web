@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+		<title>おさかなの不安定世界</title>
+		<link rel="StyleSheet" type="text/css" href="./data/css/main.css">
+		<style>
+			.btn-primary {
+				background-color: #44bbff;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="main">
+			<header id="main-header">
+				<h1></h1>
+				<nav></nav>
+			</header>
+			<div id="main-body-outer">
+				<div id="main-body">
+					<h1>おんがく</h1>
+					
+					<style>
+						.popup {
+							position: absolute;
+							z-index: 10;
+							padding: 4px;
+							color: #000;
+							background-color: #ff0;
+							box-shadow: 1px 1px 4px #880;
+							border-radius: 8px;
+							-webkit-border-radius: 8px;  
+							-moz-border-radius: 8px;  
+							display: none;
+						}
+						.popup .close {
+							text-align: center;
+							vertical-align: middle;
+							font-size: 16px;
+							font-weight: bold;
+							line-height: 100%;
+							display: inline-block;
+							cursor: pointer;
+						}
+						.favorite {
+							cursor: pointer;
+						}
+						.comment {
+							/*
+							background-color: #cccccc;
+							color: #222222;
+							*/
+							padding: 4px;
+							margin: 4px;
+							border-radius: 8px;
+						}
+						.music-menu {
+							display: inline-flex;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+						}
+
+						.card-default {
+							display: flex;
+							justify-content: flex-start;
+						}
+
+						.card-title {
+							font-weight: bold;
+						}
+
+						.card-created-at {
+							font-size: small;
+						}
+
+						.card-default > :nth-child(1) {
+							padding: 4px;
+						}
+						.card-default > :nth-child(2) {
+							flex-grow: 1;
+						}
+
+						.no-image {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 80px;
+							height: 80px;
+							font-size: 12px;
+							background-color: #666666;
+							color: #fffff0;
+						}
+						.no-image:after {
+							content: "no image";
+						}
+						.card-image {
+							width: 80px;
+							height: 80px;
+						}
+
+						.card-title {
+							color: #888888;
+						}
+
+						<!-- https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet -->
+
+					</style>
+
+					<div id="music-list"></div>
+					<script id="music-list-tmpl" type="text/x-jquery-tmpl">
+						<h2 id="${tag}">${title}</h2>
+						<div>
+							{{each songs}}
+								<div class="card-default">
+									<div>
+											{{if url_img}}
+												<a href="${url_img}"><img class="card-image" src="${url_img}"></a>
+											{{else}}
+												<span class="no-image"></span>
+											{{/if}}
+									</div>
+									<div>
+											<div class="card-title">
+												${title}
+											</div>
+										{{if created_at}}
+											<div class="card-created-at">
+												${created_at}
+											</div>
+										{{/if}}
+										<div class="music-menu">
+											{{if url}}
+												<a class="btn-s btn-primary" href="${url}" target="_blank">ダウンロード</a>&nbsp;
+											{{/if}}
+
+											{{if url_karaoke}}
+												<a class="btn-s btn-primary" href="${url_karaoke}" target="_blank">カラオケ</a>&nbsp;
+											{{/if}}
+											{{if url_lyric}}
+												<a class="btn-s btn-primary" href="${url_lyric}" target="_blank">歌詞</a>&nbsp;
+											{{/if}}
+											{{if url_nico}}
+												<a class="btn-s btn-primary" href="${url_nico}" target="_blank">ニコニコ動画</a>&nbsp;
+											{{/if}}
+											{{if url_youtube}}
+												<a class="btn-s btn-primary" href="${url_youtube}" target="_blank">youtube</a>&nbsp;
+											{{/if}}
+										</div>
+										{{if comment}}
+											<div class="comment" style="">{{html comment}}</div>
+										{{/if}}
+									</div>
+								</div>
+								<hr>
+							{{/each}}
+						</div>
+					</script>
+						
+					<br>
+					
+
+					<div id="message-area" class="popup">
+						<div style="text-align: right;"><span class="close">×</span></div>
+						<div class="message"></div>
+					</div>
+				</div>
+			</div>
+
+			<footer id="main-footer">
+			</footer>
+
+		</div>
+			
+		<script src="./data/js/common1.js?"></script>
+		<script src="./data/js/common2.js?"></script>
+		<script type="text/javascript">
+			$(function() {
+				var osakana4242_website = osakana4242.namespace("osakana4242_website");
+				osakana4242_website.init(".");
+			});
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				"use strict";
+				var global = window;
+				var _gaq = global._gaq;
+				
+				$('#message-area').find(".close").click(function () {
+					$('#message-area').fadeOut('fast');
+				});
+				
+				var DF = {};
+				DF.MUSIC_DATA = [
+					{
+						'title': '自作(うたもの)',
+						'tag': 'orig-song',
+						'songs': [
+							{
+								'id': 'osk_yoru_no_zenzendame',
+								'title': '夜のぜんぜんだめ',
+								'created_at': '2018-05-26',
+								'url': 'data/mp3/osk_yoru_no_zenzendame.mp3',
+								'url_karaoke': 'data/mp3/osk_yoru_no_zenzendame_karaoke.mp3',
+								'url_lyric': 'yoru_no_zenzendame.html',
+								'url_nico': 'https://www.nicovideo.jp/watch/sm33269089',
+								'url_youtube': 'https://www.youtube.com/watch?v=CdoUFB6kvUg',
+								'url_img': '../data/img/music/osk_yoru_no_zenzendame.jpg',
+								'is_new': true,
+								'comment': 'ひとは　ぐっすり　ねるじかん<br><br>うた: 桃音モモ',
+							},
+							{
+								'id': 'osa_atamani_hebi',
+								'title': '頭にヘビ',
+								'created_at': '2011-12-11',
+								'url': 'data/mp3/osa_atamani_hebi.mp3',
+								'url_karaoke': 'data/mp3/osa_atamani_hebi_karaoke.mp3',
+								'url_lyric': 'atama_ni_hebi.html',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm16402296',
+								'url_youtube': 'http://www.youtube.com/watch?v=mSSPdMOLRgs',
+								'url_img': '../data/img/music/atamani_hebi.jpg',
+								'is_new': false,
+								'comment': '二度寝したときに見る変な夢。<br><br>うた: 桃音モモ<br>サポート: 重音テト, 初音ミク',
+							},
+							{
+								'id': 'osa_hareno_amaoto',
+								'title': '晴れの雨音',
+								'created_at': '2011-06-27',
+								'url': 'data/mp3/osa_hareno_amaoto.mp3',
+								'url_karaoke': 'data/mp3/osa_hareno_amaoto_karaoke.mp3',
+								'url_lyric': 'hare_no_amaoto.html',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm14859069',
+								'url_img': '../data/img/music/hareno_amaoto.jpg',
+								'comment': '中二病の子供と妖怪。<br>「たま」に影響を受けた曲長。<br><br>うた: 重音テト',
+							},
+							{
+								'id': 'osa_itsumanonica',
+								'title': 'イツマノニカ',
+								'created_at': '2010-08-16',
+								'url': 'data/mp3/osa_itsumanonica.mp3',
+								'url_karaoke': 'data/mp3/osa_itsumanonica_karaoke.mp3',
+								'url_lyric': 'itsumanonica.html',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm11767225',
+								'url_img': '../data/img/music/itsumanonica.png',
+								'comment': 'ちょっと不思議ちゃんな曲。<br>ポテチをかじる音が入ってます。<br>ジャンルはたぶんニューウェーブ。<br>うたものをマジメに作った初めての作品。<br><br>うた: 桃音モモ',
+							},
+						]
+					},
+					{
+						'title': 'オウムソングのアレンジ',
+						'tag': 'aum',
+						'songs': [
+							{
+								'id': 'asahara_choetsu',
+								'title': '超越神力 キラキラ・ミックス',
+								'created_at': '2010-02-27',
+								'url': 'data/mp3/asahara_choetsu.mp3',
+								'url_karaoke': 'data/mp3/asahara_choetsu_karaoke.mp3',
+								'url_nico': 'http://www.nicovideo.jp/watch/sm9848236',
+								'url_img': '../data/img/music/choetsu.jpg',
+							},
+							{
+								'id': 'asahara_famicon',
+								'title': '麻原彰晃ファミリーコンサート2004～ゲスト 福永法源～',
+								'created_at': '2004-xx-xx',
+								'url': 'data/mp3/asahara_famicon.mp3',
+								'url_img': '../data/img/music/asahara_famicon.gif',
+								'comment': 'オススメ！<br>オウムソングのテクノポップなアレンジメドレー＋αです。<br><br>使用楽曲: 麻原彰晃マーチ、ガネーシャ体操、極厳修行者音頭、エンマの数え歌、救えオウム ヤマトのように、救済ストーリー、SSAの歌、シャンバラ・シャンバラ、賛歌、五戒の詩、幸福草など多数！<br>',
+							},
+							{
+								'id': 'asahara_march',
+								'title': '麻原彰晃マーチ -洗脳mix-',
+								'created_at': '2004-xx-xx',
+								'url': 'data/mp3/asahara_march.mp3',
+								'url_img': '../data/img/music/asahara_march.gif',
+								'comment': 'オウムソングの中で最も有名と思われるしょーこーしょーこーの曲のテクノポップアレンジです。<br>ショーコーの洗脳ボイスの他、信者たちのあぶない発言が紛れています。',
+							},
+							{
+								'id': 'asahara_tantora',
+								'title': 'めざせタントラヤーナ、もすかうのように(タントラヤーナのアレンジ)',
+								'created_at': '2006-xx-xx',
+								'url': 'data/mp3/asahara_tantora.mp3',
+								'url_img': '../data/img/music/mez.jpg',
+								'comment': 'タントラヤーナが「もすかう」っぽくなりました。',
+							},
+							{
+								'id': 'asahara_shanbara',
+								'created_at': '2007-xx-xx',
+								'title': 'シャンバラ・シャンバラ リミックス(仮)',
+								'url': 'data/mp3/asahara_shanbara.mp3',
+								'comment': '原曲が普通にかっこいいやつです。<br>オウムの専属オーケストラ「キーレーン」が演奏する曲です。',
+							},
+							{
+								'id': 'asahara_march_2007',
+								'created_at': '2007-xx-xx',
+								'title': '麻原彰晃マーチ2007(仮)',
+								'url': 'data/mp3/asahara_march_2007.mp3'
+							},
+						]
+					},
+					{
+						'title': 'その他宗教ネタ',
+						'tag': 'cult',
+						'songs': [
+							{
+								'id': 'hev_saiko',
+								'title': '最高 最高 最高(Swindle Mix)',
+								'url': 'data/mp3/hev_saiko.mp3',
+								'url_img': '../data/img/music/hev_saiko.jpg',
+							},
+							{
+								'id': 'osa_kam',
+								'title': '神々の黄昏',
+								'url': 'data/mp3/osa_kam.mp3',
+								'url_img': '../data/img/music/osa_kam.gif',
+								'comment': 'テキトーなリズムにカルト宗教(オウム、法の華、ライフスペース)の代表のボイスを乗っけました。'
+							},
+						]
+					},
+					{
+						'title': '自作(電子音系のインスト)',
+						'tag': 'orig-inst',
+						'songs': [
+							{
+								'id': 'osa_gyo',
+								'title': 'ぎょっ・クロスフェード・メドレー',
+								'url_img': '../data/img/music/osa_gyo.gif',
+								'url': 'data/mp3/osa_gyo.mp3',
+								'comment': 'さかなが自機のグラディウス風シューティングゲームの曲です。<br>いっぱいあるのでゲームの進行に沿った形で繋げました。<br>スタート音、空中戦、ステージ1、ボス戦、ステージ2... というような構成です。',
+							},
+							{
+								'id': 'osa_hik',
+								'title': 'ひかり探索',
+								'url_img': '../data/img/music/osa_hik.gif',
+								'url': 'data/mp3/osa_hik.mp3',
+								'comment': '自分探しして、ふわふわピコピコ。<br>06:25辺りから、ぶっ壊れて、ぱーっとなる。',
+							},
+							{
+								'id': 'osa_hit',
+								'title': 'ひと雨来るぞ',
+								'url': 'data/mp3/osa_hit.mp3',
+								'url_img': '../data/img/music/osa_hit.gif',
+								'comment': 'お祭りやってるところに突然どしゃぶりの雨がやってきて、涼しくなるイメージです。田んぼのかえるの声が聞けるよ！<br>2003年ごろの作品でしょぼいのですがお気に入りです。'
+							}
+						]
+					},
+					{
+						'title': '自作(吹奏楽系のインスト)',
+						'tag': 'orig-wind',
+						'songs': [
+							{
+								'id': 'osa_moj',
+								'title': 'もうじき日が暮れる',
+								'url': 'data/mp3/osa_moj.mp3'
+							},
+							{
+								'id': 'osa_kon',
+								'title': '紺クレヨンの森',
+								'url': 'data/mp3/osa_kon.mp3'
+							},
+						]
+					},
+					{
+						'title': '自作(？？？)',
+						'tag': 'orig-etc',
+						'songs': [
+							{
+								'id': 'osa_kimura',
+								'title': '陰毛教師キムラ',
+								'url': 'data/mp3/osa_kimura.mp3',
+								'url_img': '../data/img/music/kimura.jpg',
+								'comment': '大学生の悪ふざけ！架空の教師キムラの授業の様子が曲になりました。<br><br>キムラ：あかぎ恋<br>生徒：おけら<br>便所バエ：おさかな<br>うた：あかぎ恋、おけら、おさかな',
+							},
+						]
+					},
+				];
+				var $tmpl = $("#music-list-tmpl").tmpl(DF.MUSIC_DATA);
+				// テンプレに関数関連付け.
+				$tmpl.find(".favorite").click(function () {
+					var $this = $(this);
+					var trackEventLabel = $this.find("input[name='id']").attr('value');
+					_gaq.push(['_trackEvent', 'music', 'favorite', trackEventLabel]);
+					
+					var $element = $('#message-area');
+					var position = $this.position();
+					$element.css({
+						'display': 'none',
+						'left': position.left + 'px',
+						'top': position.top + 'px'
+					});
+					$element.find(".message").text('さんくす！');
+					$element.fadeIn('fast');
+					
+					// console.log("click:" + $this.attr('title'));
+				});
+				
+				$tmpl.find("a.download").click(function () {
+					var label = $(this).get(0).href;
+					_gaq.push(['_trackEvent', 'music', 'download', label]);
+				});
+				
+				// bodyに追加.
+				$tmpl.appendTo('#music-list');
+			});
+		</script>
+	</body>
+</html>
+
