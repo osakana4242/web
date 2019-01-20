@@ -96,6 +96,29 @@
 		return v0 * (this.value - 1.0) + v1 * this.value;
 	}
 
+	// from: http://phiary.me/javascript-url-parameter-query-string-parse-stringify/
+	osakana4242.QueryString = {  
+		parse: function(text, sep, eq, isDecode) {
+			text = text || location.search.substr(1);
+			sep = sep || '&';
+			eq = eq || '=';
+			var decode = (isDecode) ? decodeURIComponent : function(a) { return a; };
+			return text.split(sep).reduce(function(obj, v) {
+			var pair = v.split(eq);
+			obj[pair[0]] = decode(pair[1]);
+			return obj;
+			}, {});
+		},
+		stringify: function(value, sep, eq, isEncode) {
+			sep = sep || '&';
+			eq = eq || '=';
+			var encode = (isEncode) ? encodeURIComponent : function(a) { return a; };
+			return Object.keys(value).map(function(key) {
+			return key + eq + encode(value[key]);
+			}).join(sep);
+		},
+	};
+
 	global.osakana4242 = osakana4242;
 }(window));
 

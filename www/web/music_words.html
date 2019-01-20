@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+		<title>おさかなの不安定世界</title>
+		<link rel="StyleSheet" type="text/css" href="./data/css/main.css">
+	</head>
+	
+	<body>
+		<div id="main">
+			<header id="main-header">
+				<h1></h1>
+				<nav></nav>
+			</header>
+
+			<div id="main-body-outer">
+				<div id="main-body">
+					<div id="words"></div>
+				</div>
+			</div>
+			<footer id="main-footer">
+			</footer>
+		</div>
+		<script src="./data/js/common1.js?"></script>
+		<script src="./data/js/common2.js?"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				var osakana4242_website = osakana4242.namespace("osakana4242_website");
+				osakana4242_website.init(".");
+			});
+			$(function() {
+				const query = osakana4242.QueryString.parse();
+				const url = './music/' + query.words;
+				$.ajax({
+					url: url,
+				}).
+				done(function (data) {
+					console.log("done: " + data);
+					$("#words").html(data.replace(/\n/g,"<br>"));
+				}).
+				fail(function (data) {
+					$("#words").html(
+						data.status + " " + data.statusText + "<br>" +
+						"url: " + url
+					);
+					console.log("fail: " + data);
+				}).
+				always(function(data) {
+				});
+			});
+		</script>
+	</body>
+</html>
