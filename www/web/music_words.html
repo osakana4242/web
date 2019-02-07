@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<title>おさかなの不安定世界</title>
 		<link rel="StyleSheet" type="text/css" href="./data/css/main.css">
+		<style>
+			#words {
+				line-height: 150%;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -45,7 +50,7 @@
 						data.status + " " + data.statusText + "<br>" +
 						"url: " + url
 					);
-					console.log("fail: " + data);
+					// console.log("fail: " + data);
 				}).
 				always(function(data) {
 				});
