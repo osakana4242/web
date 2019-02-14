@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="ジャンプ地獄_dev">
+		<Require feature="opensocial-0.8" />
+		<Require feature="dynamic-height" />
+	</ModulePrefs>
+	
+	
+	
+	<Content type="url" view="touch" href="http://osakana4242.appspot.com/jump_hell/" />
+	<Content type="html"><![CDATA[
+		<style>
+			body {
+				background-color: #444;
+			}
+			#app-page {
+				text-align: center;
+				margin: auto;
+				width: 480px;
+				border-color: #222;
+				border-style: none solid;
+			}
+			#app-message {
+				background-color: #440;
+				color: #fff;
+				position: absolute;
+				top: 0px;
+				z-index: 255;
+				width: 100%;
+				font-size: 12px;
+			}
+			#app-main-frame {
+				margin: auto;
+				width: 480px;
+				height: 640px;
+				border-style: none;
+			}
+			#app-side-menu {
+				position: absolute;
+				z-index: 10;
+				width: 120px;
+				font-size: 12px;
+				border-style: none;
+				padding: 4px;
+				color: #fff;
+			}
+			.button {
+				padding: 4px;
+				display: inline-block;
+				background-color: #88c;
+				color: #fff;
+				cursor: pointer;
+			}
+			
+			
+		</style>
+		<div id="app-main">
+			<div id="app-side-menu">
+				<div>ジャンプ地獄</div>
+				<br />
+				<span class="button request-share-app-button" style="visibility: hidden;">友人を招待する</span>
+			</div>
+			<div id="app-page"></div>
+			<div id="app-message"></div>
+		</div>
+		
+		<script id="error-tmpl" type="text/x-jquery-tmpl">
+			<div style="color:#fff;background-color:#844; padding:4px;">
+				{{html errorText}}<br />
+				<br />
+				エラー詳細<br />
+				{{html errorDetail}}
+			</div>
+		</script>
+		
+		<script type="text/javascript" src="http://dev-osakana4242.tank.jp/res/js/jquery_custom.js?v=20120930_3"></script>
+		<script type="text/javascript" src="http://dev-osakana4242.tank.jp/res/js/gadget_mixi.js?v=20120930_12"></script>
+		<script type="text/javascript">
+			(function(global) {
+				"use strict";
+				var osakana4242 = global.osakana4242 || {};
+				function init() {
+					var url = "http://osakana4242.appspot.com/jump_hell/?pc=1";
+					osakana4242.mixi.get(url);
+				}
+				gadgets.util.registerOnLoadHandler(init);
+				
+				
+				$(".request-share-app-button").click(function() {
+					opensocial.requestShareApp("VIEWER_FRIENDS", null, function(response) {
+					  if (response.hadError()) {
+						var errCode = response.getErrorCode();
+						// do something...
+					  } else {
+						// do something...
+					  }
+					});
+				}).css("visibility", "visible");
+			}(this));
+		</script>		
+	
+		
+	]]></Content>
+</Module>

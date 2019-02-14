@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<style>
+			#app-frame {
+				width: 480px;
+				height: 480px;
+			}
+		</style>
+	</head>
+	<body>
+		body.<br />
+		<br />
+		<div id="result"></div>
+		<iframe id="app-frame" src="http://osakana4242.appspot.com/jump_hell/?opensocial_viewer_id=hoge&opensocial_owner_id=piyo&opensocial_app_id=35762"></iframe>
+		
+		<script type="text/javascript" src="js/pc.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var r = new RegExp("href=¥"JavaScript:osakana4242.mixi.get('http://osakana4242.appspot.com/$1')¥"");
+//				var r = new RegExp("href=¥"JavaScript:osakana4242.mixi.get('http://osakana4242.appspot.com/$1')¥"");
+				
+				$.ajax({
+					type: "GET",
+					// url: "./part.html",
+					url: "http://www15.plala.or.jp/sasimi/",
+					cache: false,
+					success: function(html){
+						var elem = document.getElementById("result");
+						elem.innerHTML = html;
+						// $("#result").append(html);
+					},
+					error: function() {
+						$("#result").append("error");
+					}
+				});
+			});	
+		</script>
+	</body>
+</html>
