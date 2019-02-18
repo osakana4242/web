@@ -7,7 +7,7 @@
 	
 	
 	
-	<Content type="url" view="touch" href="http://jump-hell.appspot.com/jump_hell/" />
+	<Content type="url" view="touch" href="https://osakana4242.tank.jp/res/jump_hell2/game/index.html" />
 	<Content type="html"><![CDATA[
 		<style>
 			body {
@@ -73,14 +73,14 @@
 			</div>
 		</script>
 		
-		<script type="text/javascript" src="http://osakana4242.tank.jp/res/js/jquery_custom.js?v=20120930_3"></script>
-		<script type="text/javascript" src="http://osakana4242.tank.jp/res/js/gadget_mixi.js?v=20120930_12"></script>
+		<script type="text/javascript" src="https://osakana4242.tank.jp/res/js/jquery_custom.js?v=20120930_3"></script>
+		<script type="text/javascript" src="https://osakana4242.tank.jp/res/js/gadget_mixi.js?v=20120930_12"></script>
 		<script type="text/javascript">
 			(function(global) {
 				"use strict";
 				var osakana4242 = global.osakana4242 || {};
 				function init() {
-					var url = "http://jump-hell.appspot.com/jump_hell/?pc=1";
+					var url = "https://osakana4242.tank.jp/res/jump_hell2/game/index.html?pc=1";
 					osakana4242.mixi.get(url);
 				}
 				gadgets.util.registerOnLoadHandler(init);

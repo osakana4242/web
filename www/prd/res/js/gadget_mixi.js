@@ -64,6 +64,7 @@ osakana4242.mixi = {
 				});
 			} else {
 				var urlTop = $dev.find("#url-top").attr("href");
+				urlTop = 'https://osakana4242.tank.jp/res/jump_hell2/game/index.html?pc=1';
 				console.log("urlTop:" + urlTop);
 				$dev = $('<iframe id="app-main-frame"></iframe>');
 				$dev.attr("src", urlTop);
