@@ -4,6 +4,7 @@ body {
 	margin: 0px;
 	background-color: #44bbff;
 	color: #ffffff;
+	font-family: Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS PGothic,sans-serif;
 }
 
 #main-header {
@@ -19,7 +20,7 @@ body {
 	text-align: center;
 }
 
-main-footer {
+#main-footer {
 	text-align: center;
 }
 
@@ -30,8 +31,13 @@ main-footer {
 
 #main-body {
 	width: 800px;
-	padding: 0px;
+	padding: 0px 0px;
 	background-color: #fffff0;
+	margin: auto;
+}
+
+#footer-body {
+	width: 800px;
 	margin: auto;
 }
 
@@ -39,7 +45,11 @@ main-footer {
 	#main-body {
 		width: auto;
 	}
+	#footer-body {
+		width: auto;
+	}
 }
+
 
 .site-title {
 	text-decoration: none;
@@ -83,10 +93,14 @@ main-footer {
  */
 
 
+#main-body h1, #main-body h2 {
+	padding: 0px 4px;
+}
 
 #main-body h1 {
+	border-bottom-style: solid;
+	border-bottom-width: 0.2em;
 	border-color: #8888ff;
-	background-color: #ccccff;
 	color: #444444;
 }
 
@@ -95,5 +109,9 @@ main-footer {
 	border-bottom-width: 0.1em;
 	border-color: #8888ff;
 	color: #444444;
+}
+
+#main-body p, #main-footer p {
+	padding: 0px 4px;
 }
 

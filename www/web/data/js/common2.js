@@ -168,11 +168,12 @@
 
 	var makefooter = function(rootPath) {
 		var tmplData = (
-			'<div style="text-align: right;">'
+			'<div id="footer-body">'
+			+ '<p style="text-align: right;">'
 				+ '<a class="btn-s" href="#">▲このページの上部へ</a> '
-			+ '</div>'
+			+ '</p>'
 			+ '三途の川おさかな(2002-2019)'
-			
+			+ '</div>'
 			
 			+ '<script type="text/javascript" src="https://apis.google.com/js/plusone.js">'
 			+ "{lang: 'ja'}"
