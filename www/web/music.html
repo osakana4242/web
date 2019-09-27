@@ -139,6 +139,9 @@
 											{{if url_karaoke}}
 												<a class="btn-s btn-success" href="${url_karaoke}" target="_blank">カラオケ</a>&nbsp;
 											{{/if}}
+											{{if url_mid}}
+												<a class="btn-s btn-success" href="${url_mid}" target="_blank">midi</a>&nbsp;
+											{{/if}}
 											{{if url_lyric}}
 												<a class="btn-s btn-primary" href="./music_words.html?words=${url_lyric}">歌詞</a>&nbsp;
 											{{/if}}
@@ -204,6 +207,7 @@
 								'created_at': '2019-04-25',
 								'url': 'data/mp3/osk_tsukurikake_no_asa.mp3',
 								'url_karaoke': 'data/mp3/osk_tsukurikake_no_asa_karaoke.mp3',
+								'url_mid': 'data/mid/osk_tsukurikake_no_asa.mid',
 								'url_lyric': 'tsukurikake_no_asa.txt',
 								'url_nico': 'https://www.nicovideo.jp/watch/sm35021332',
 								'url_youtube': 'https://www.youtube.com/watch?v=Rly2KGmPS44',
@@ -217,11 +221,12 @@
 								'created_at': '2018-05-26',
 								'url': 'data/mp3/osk_yoru_no_zenzendame.mp3',
 								'url_karaoke': 'data/mp3/osk_yoru_no_zenzendame_karaoke.mp3',
+								'url_mid': 'data/mid/osk_yoru_no_zenzendame.mid',
 								'url_lyric': 'yoru_no_zenzendame.txt',
 								'url_nico': 'https://www.nicovideo.jp/watch/sm33269089',
 								'url_youtube': 'https://www.youtube.com/watch?v=CdoUFB6kvUg',
 								'url_img': 'data/img/music/osk_yoru_no_zenzendame.jpg',
-								'is_new': true,
+								'is_new': false,
 								'comment': 'ひとは　ぐっすり　ねるじかん<br><br>うた: 桃音モモ',
 							},
 							{
@@ -230,6 +235,7 @@
 								'created_at': '2011-12-11',
 								'url': 'data/mp3/osa_atamani_hebi.mp3',
 								'url_karaoke': 'data/mp3/osa_atamani_hebi_karaoke.mp3',
+								'url_mid': 'data/mid/osa_atamani_hebi.mid',
 								'url_lyric': 'atama_ni_hebi.txt',
 								'url_nico': 'http://www.nicovideo.jp/watch/sm16402296',
 								'url_youtube': 'http://www.youtube.com/watch?v=mSSPdMOLRgs',
