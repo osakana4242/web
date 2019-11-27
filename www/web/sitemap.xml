@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/</loc>
-		<lastmod>2019-09-28</lastmod>
+		<lastmod>2019-11-28</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/history.html</loc>
-		<lastmod>2019-09-28</lastmod>
+		<lastmod>2019-11-28</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/hello.html</loc>
@@ -14,7 +14,7 @@
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/music.html</loc>
-		<lastmod>2019-09-28</lastmod>
+		<lastmod>2019-11-28</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/itunes_furikake.html</loc>
@@ -35,5 +35,9 @@
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/music_words.html?words=yoru_no_zenzendame.txt</loc>
 		<lastmod>2019-04-11</lastmod>
+	</url>
+	<url>
+		<loc>https://osakana4242.sakura.ne.jp/web/music_words.html?words=futari_no_kimodameshi.txt</loc>
+		<lastmod>2019-11-28</lastmod>
 	</url>
 </urlset>
