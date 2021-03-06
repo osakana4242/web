@@ -11,9 +11,9 @@
 				display: block;
 				background-color: #ffffff;
 				border-radius: 8px;
-				width: 6em;
+				width: 160px;
 				height: 6em;
-				padding: 0.1em;
+				padding: 8px 8px;
 				margin: 0.1em;
 			}
 
@@ -60,6 +60,26 @@
 			#key-visual > div {
 				width: 320px;
 			}
+
+			.pickup {
+				display: flex;
+			}
+			.pickup > div {
+				padding: 4px;
+			}
+			.pickup-image {
+				width: 360px;
+				height: 360px;
+				background-size: 360px 360px;
+				border-radius: 8px;
+				background-image: url(./data/img/music/osk_korogaru_nichiyoubi.png);
+			}
+			.pickup > :nth-child(1) {
+				width: 360px;
+			}
+			.pickup > :nth-child(2) {
+				flex: 1;
+			}
 		</style>
 	</head>
 	
@@ -73,6 +93,7 @@
 			<div id="main-body-outer">
 				<div id="main-body">
 					<div id="key-visual"><img src="./data/img/key_visual.png" width="320" height="120"></div>
+
 					<div class="icons">
 						<a class="btn btn-primary" href="./music.html#orig-song">
 							<span>おんがく</span>
@@ -99,7 +120,18 @@
 							<span>だれなんだお前は</span>
 						</a>
 					</div>
-					
+					<div>
+						<h1>ちゅうもく！</h1>
+						<div class="pickup">
+							<div>
+								<a href="./music.html"><div class="pickup-image"></div></a>
+							</div>
+							<div>
+								<a class="btn btn-primary" href="https://nico.ms/sm38372005"><span>ニコニコ動画</span></a>
+								<a class="btn btn-primary" href="https://youtu.be/xpMpWvNC_c4"><span>YouTube</span></a>
+							</div>
+						</div>
+					</div>
 					<div>
 						<h1>おしらせ</h1>
 						<ul>
