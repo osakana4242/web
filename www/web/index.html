@@ -11,10 +11,10 @@
 				display: block;
 				background-color: #ffffff;
 				border-radius: 8px;
-				width: 160px;
-				height: 6em;
+				width: 96px;
+				height: 96px;
 				padding: 8px 8px;
-				margin: 0.1em;
+				margin: 2px;
 			}
 
 			.btn-primary {
@@ -63,22 +63,24 @@
 
 			.pickup {
 				display: flex;
-			}
-			.pickup > div {
-				padding: 4px;
+				flex-wrap: wrap;
 			}
 			.pickup-image {
-				width: 360px;
-				height: 360px;
-				background-size: 360px 360px;
+				width: 320px;
+				height: 320px;
+				background-size: 320px;
 				border-radius: 8px;
 				background-image: url(./data/img/music/osk_korogaru_nichiyoubi.png);
+				display: inline-block;
 			}
+
 			.pickup > :nth-child(1) {
-				width: 360px;
+				width: 320px;
+				margin: 2px 6px;
 			}
 			.pickup > :nth-child(2) {
 				flex: 1;
+				padding: 0px;
 			}
 		</style>
 	</head>
@@ -123,12 +125,12 @@
 					<div>
 						<h1>ちゅうもく！</h1>
 						<div class="pickup">
+							<a class="pickup-image" href="./music.html"></a>
 							<div>
-								<a href="./music.html"><div class="pickup-image"></div></a>
-							</div>
-							<div>
-								<a class="btn btn-primary" href="https://nico.ms/sm38372005"><span>ニコニコ動画</span></a>
-								<a class="btn btn-primary" href="https://youtu.be/xpMpWvNC_c4"><span>YouTube</span></a>
+								<div class="icons">
+									<a class="btn btn-primary" href="https://nico.ms/sm38372005"><span>ニコニコ動画</span></a>
+									<a class="btn btn-primary" href="https://youtu.be/xpMpWvNC_c4"><span>YouTube</span></a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -136,12 +138,12 @@
 						<h1>おしらせ</h1>
 						<ul>
 							<li>
-								2021年03月05日:<br>
-								[追加]おんがく→<a href="./music.html">ころがる日曜日</a><br>
+								2022年02月02日:<br>
+								[追加]おんがく→<a href="./music.html#orig-inst">ねこ宇宙（復刻）</a><br>
 							</li>
 							<li>
-								2020年07月16日:<br>
-								[更新]<a href="./itunes_furikake.html">iTunesふりかけ2.3.0</a><br>
+								2021年03月05日:<br>
+								[追加]おんがく→<a href="./music.html">ころがる日曜日</a><br>
 							</li>
 						</ul>
 						<p>
