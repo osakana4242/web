@@ -172,7 +172,7 @@
 			+ '<p style="text-align: right;">'
 				+ '<a class="btn-s" href="#">▲このページの上部へ</a> '
 			+ '</p>'
-			+ '三途の川おさかな(2002-2021)'
+			+ '三途の川おさかな(2002-2022)'
 			+ '</div>'
 			
 			+ '<script type="text/javascript" src="https://apis.google.com/js/plusone.js">'
