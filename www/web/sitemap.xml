@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/</loc>
-		<lastmod>2022-04-05</lastmod>
+		<lastmod>2022-09-16</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/history.html</loc>
-		<lastmod>2022-04-05</lastmod>
+		<lastmod>2022-09-16</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/hello.html</loc>
-		<lastmod>2019-04-11</lastmod>
+		<lastmod>2022-09-16</lastmod>
 	</url>
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/music.html</loc>
@@ -43,5 +43,9 @@
 	<url>
 		<loc>https://osakana4242.sakura.ne.jp/web/music_words.html?words=korogaru_nichiyoubi.txt</loc>
 		<lastmod>2021-03-05</lastmod>
+	</url>
+	<url>
+		<loc>https://osakana4242.sakura.ne.jp/web/music_words.html?words=yogisha_ga_tomaranai.txt</loc>
+		<lastmod>2022-09-16</lastmod>
 	</url>
 </urlset>
