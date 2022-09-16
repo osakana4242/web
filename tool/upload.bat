@@ -1,4 +1,4 @@
-@chcp 65001
+@chcp 65001 > nul
 @rem webページにファイルを同期する.
 
 pushd %~d0%~p0
