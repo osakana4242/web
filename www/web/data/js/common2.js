@@ -172,7 +172,7 @@
 			+ '<p style="text-align: right;">'
 				+ '<a class="btn-s" href="#">▲このページの上部へ</a> '
 			+ '</p>'
-			+ '三途の川おさかな(2002-2022)'
+			+ '三途の川おさかな(2002-2023)'
 			+ '</div>'
 			
 			+ '<script type="text/javascript" src="https://apis.google.com/js/plusone.js">'
@@ -190,48 +190,3 @@
 	}
 
 }(window));
-
-
-//------------------------------------------------------------------------------
-// Google Analytics 4.
-
-(function (global) {
-	var host = '' + document.location.host;
-	var isLocalHost = (host === '127.0.0.1') || (host === 'localhost');
-	if (isLocalHost) return;
-	
-		// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11051536-4"></script>
-		(function () {
-		var ga = document.createElement('script');
-		ga.type = 'text/javascript';
-		ga.async = true;
-		ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-11051536-4';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(ga, s);
-	})();
-
-	// <script>
-	//   window.dataLayer = window.dataLayer || [];
-	//   function gtag(){dataLayer.push(arguments);}
-	//   gtag('js', new Date());
-	// 
-	//   gtag('config', 'UA-11051536-4');
-	// </script>
-	(function () {
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-11051536-4');
-	})();
-}(window));
-// 元のコード.
-// <!-- Global site tag (gtag.js) - Google Analytics -->
-// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11051536-4"></script>
-// <script>
-//   window.dataLayer = window.dataLayer || [];
-//   function gtag(){dataLayer.push(arguments);}
-//   gtag('js', new Date());
-// 
-//   gtag('config', 'UA-11051536-4');
-// </script>
