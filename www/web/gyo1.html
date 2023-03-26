@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+		<title>ぎょっ</title>
+		<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-J3LTSP6BVN"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-J3LTSP6BVN');</script>
+		<link rel="StyleSheet" type="text/css" href="./data/css/main.css">
+	</head>
+	
+	<body>
+		<div id="main">
+			<header id="main-header">
+				<h1></h1>
+				<nav></nav>
+			</header>
+
+			<div id="main-body-outer">
+				<div id="main-body">
+
+					<div id="content">
+# 「ぎょっ」について
+
+<img src="./data/contents/gyo1/img/top.png">
+
+「ぎょっ」は魚が主人公の  
+横スクロールシューティングゲームです。  
+
+ステージは1つだけ。  
+
+# 起動方法
+
+gyo.zip を展開後、gyo.batを実行してください。
+
+# 動作に必要な環境
+
+* Java ランタイムのバージョン 1.3 以上
+
+
+# 操作方法
+
+## 仮想パッドとキーボードの対応
+
+| 仮想パッド   | プレイヤー1 | プレイヤー2 |
+| ------------ | ----------- | ----------- |
+| 方向キー     | WASD        | ↑←↓→    |
+| Aボタン      | V           | ／          |
+| Bボタン      | B           | ＼          |
+| Optionボタン | ESC         | Enter       |
+
+## キーと効果の対応
+
+| キー         | 効果               |
+| ------------ | ------------------ |
+| Aボタン      | 射撃, 決定         |
+| Bボタン      | 食らいつき         |
+| Optionボタン | ポーズメニュー     |
+
+
+# システム紹介
+
+## 食らいつき(Bボタン)
+
+敵に命中すると、倒すまで離さない！  
+( ひっぱり合いになるので、危ないときはBボタンで離れよう。 )  
+
+<img src="./data/contents/gyo1/img/eat.gif">
+
+## うんこを射出
+
+食らいつきでおなかを満たすとうんこを射出！  
+うんこはプレイヤーを追尾して射撃を手伝ってくれるぞ！  
+
+## うんこを拝借
+
+2人同時プレイ時、仲間のうんこに触れると自分のものに出来る！  
+なかよく、うんこを分け合おう！
+
+<img src="./data/contents/gyo1/img/snatch_unko.gif">
+				</div>
+			</div>
+			<footer id="main-footer">
+			</footer>
+		</div>
+		
+		<div id="script-area">
+
+			<script src="./data/js/common1.js?"></script>
+			<script src="./data/js/common2.js?"></script>
+			<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+			<script type="text/javascript">
+				$(function() {
+					var osakana4242_website = osakana4242.namespace("osakana4242_website");
+					osakana4242_website.init(".");
+
+					var content = document.getElementById('content');
+					content.innerHTML = marked.parse(content.innerHTML);
+				});
+			</script>
+		</div>
+	</body>
+</html>
